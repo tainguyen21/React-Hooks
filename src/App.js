@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.scss";
+import Clock from "./components/Clock/Clock";
 import Pagination from "./components/Pagination/Pagination";
 import PostFiltersForm from "./components/PostFiltersForm/PostFiltersForm";
 import PostList from "./components/PostList/PostList";
@@ -24,6 +25,8 @@ function App() {
     _limit: 10,
     title_like: "",
   });
+
+  const [showClock, setShowClock] = useState(true);
 
   useEffect(() => {
     async function fetchPostList() {
@@ -83,6 +86,10 @@ function App() {
     });
   }
 
+  function handleToggleClock() {
+    setShowClock(!showClock);
+  }
+
   return (
     <div className="app">
       Welcome to React-hooks
@@ -92,6 +99,8 @@ function App() {
       <PostFiltersForm onSubmit={handleFiltersChagne} />
       <PostList posts={postList} />
       <Pagination pagination={pagination} onPageChange={handlePageChange} />
+      {showClock && <Clock />}
+      <button onClick={handleToggleClock}>Toggle Clock</button>
     </div>
   );
 }

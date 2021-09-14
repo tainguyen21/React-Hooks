@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.scss";
 import BetterClock from "./components/BetterClock/BetterClock";
 import Clock from "./components/Clock/Clock";
+import MagicBox from "./components/MagicBox/MagicBox";
 import Pagination from "./components/Pagination/Pagination";
 import PostFiltersForm from "./components/PostFiltersForm/PostFiltersForm";
 import PostList from "./components/PostList/PostList";
@@ -103,6 +104,7 @@ function App() {
       {showClock && <Clock />}
       <BetterClock />
       <button onClick={handleToggleClock}>Toggle Clock</button>
+      <MagicBox />
     </div>
   );
 }

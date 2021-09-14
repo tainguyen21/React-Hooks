@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.scss";
+import BetterClock from "./components/BetterClock/BetterClock";
 import Clock from "./components/Clock/Clock";
 import Pagination from "./components/Pagination/Pagination";
 import PostFiltersForm from "./components/PostFiltersForm/PostFiltersForm";
@@ -100,6 +101,7 @@ function App() {
       <PostList posts={postList} />
       <Pagination pagination={pagination} onPageChange={handlePageChange} />
       {showClock && <Clock />}
+      <BetterClock />
       <button onClick={handleToggleClock}>Toggle Clock</button>
     </div>
   );
